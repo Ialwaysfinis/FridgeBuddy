@@ -16,14 +16,18 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
 
-    <ImageButton
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/imageButton2"
-        android:src="@drawable/back"
-        android:scaleType="fitStart"
-        android:adjustViewBounds="false"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Search by Ingredients"
+        android:id="@+id/textView3"
         android:layout_alignTop="@+id/imageView2"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:textSize="35dp"
+        android:layout_alignBottom="@+id/imageView2"
+        android:layout_toLeftOf="@+id/imageView2"
+        android:layout_toStartOf="@+id/imageView2" />
+
 </RelativeLayout>
