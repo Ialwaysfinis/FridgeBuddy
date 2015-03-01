@@ -7,40 +7,6 @@
     android:weightSum="1"
     android:background="#ffe3b9ff">
 
-    <Button
-        android:layout_width="127dp"
-        android:layout_height="wrap_content"
-        android:text="Browse all Recipes"
-        android:id="@+id/browse_button"
-        android:layout_gravity="center_vertical"
-        android:enabled="true"
-        android:layout_above="@+id/button"
-        android:layout_alignRight="@+id/button"
-        android:layout_alignEnd="@+id/button"
-        android:layout_marginBottom="51dp"
-        android:layout_alignLeft="@+id/button"
-        android:layout_alignStart="@+id/button" />
-
-    <Button
-        android:layout_width="137dp"
-        android:layout_height="wrap_content"
-        android:text="Search"
-        android:id="@+id/button"
-        android:enabled="true"
-        android:layout_above="@+id/button3"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="62dp" />
-
-    <Button
-        android:layout_width="144dp"
-        android:layout_height="wrap_content"
-        android:text="About Us"
-        android:id="@+id/button3"
-        android:layout_gravity="bottom"
-        android:layout_above="@+id/imageView"
-        android:layout_alignLeft="@+id/button"
-        android:layout_alignStart="@+id/button" />
-
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -59,5 +25,40 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageButton"
+        android:src="@drawable/browse"
+        android:cropToPadding="false"
+        android:background="#ffe3b9ff"
+        android:scaleType="fitXY"
+        android:adjustViewBounds="true"
+        android:layout_below="@+id/imageView5"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="44dp" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageButton2"
+        android:src="@drawable/search_by_ingredient"
+        android:scaleType="fitXY"
+        android:background="ffe3b9ff"
+        android:layout_centerVertical="true"
+        android:layout_alignLeft="@+id/imageButton"
+        android:layout_alignStart="@+id/imageButton" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageButton3"
+        android:src="@drawable/about_us"
+        android:scaleType="fitXY"
+        android:background="#ffe3b9ff"
+        android:adjustViewBounds="true"
+        android:layout_above="@+id/imageView"
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>
