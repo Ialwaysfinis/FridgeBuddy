@@ -1,26 +1,52 @@
 package com.example.administrator.helloworld;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
+import android.widget.ImageButton;
 
 
 public class MainActivity extends ActionBarActivity {
+
+ImageButton btn1;
+ImageButton btn2;
+ImageButton btn3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        btn1 = (ImageButton) findViewById(R.id.button_browse);
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent (getApplicationContext(), Browse.class);
+                startActivity(intent);
+            }
+        });
+        btn2 = (ImageButton) findViewById(R.id.button_search);
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent (getApplicationContext(), Search.class);
+                startActivity(intent);
+            }
+        });
+        btn3 = (ImageButton) findViewById(R.id.button_aboutus);
+        btn3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent (getApplicationContext(), AboutUs.class);
+                startActivity(intent);
+            }
+        });
     }
 
-    public void buttonOnClick(View v) {
-// do something when the button is clicked
-        Button button=(Button) v;
-        ((Button) v).setText("clicked");
-    }
+
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
