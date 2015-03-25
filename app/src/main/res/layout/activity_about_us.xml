@@ -27,4 +27,14 @@
         android:layout_alignParentStart="true"
         android:textSize="40dp" />
 
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageButton2"
+        android:src="@drawable/back_button2"
+        android:scaleType="fitStart"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
 </RelativeLayout>

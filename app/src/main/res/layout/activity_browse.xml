@@ -22,22 +22,24 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Browse Recipes"
         android:id="@+id/textView2"
-        android:layout_alignTop="@+id/imageView3"
+        android:textSize="40sp"
+        android:editable="true"
+        android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:textSize="40dp"
-        android:layout_alignBottom="@+id/imageView3"
         android:layout_toLeftOf="@+id/imageView3"
         android:layout_toStartOf="@+id/imageView3" />
 
-    <TextView
+    <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TEST TEST TEST"
-        android:id="@+id/textView"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"
-        android:textSize="60dp"
-        android:textIsSelectable="true" />
+        android:id="@+id/back_button"
+        android:src="@drawable/back_button2"
+        android:cropToPadding="false"
+        android:clickable="false"
+        android:onClick="buttonOnClick"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
 </RelativeLayout>

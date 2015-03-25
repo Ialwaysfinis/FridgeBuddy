@@ -1,9 +1,11 @@
 package com.example.administrator.helloworld;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 
 public class Browse extends ActionBarActivity {
@@ -14,6 +16,11 @@ public class Browse extends ActionBarActivity {
         setContentView(R.layout.activity_browse);
     }
 
+    public void buttonOnClick(View v)
+    {
+        Intent i = new Intent(Browse.this, MainActivity.class);
+        startActivity(i);
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
