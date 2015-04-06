@@ -4,8 +4,6 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.widget.TextView;
 
 
@@ -22,7 +20,7 @@ public class recipe extends ActionBarActivity {
 
         recipeId = getIntent().getIntExtra("RECIPE_ID", 0);
         SQLiteDatabase db = (new DatabaseHelper(this)).getWritableDatabase();
-        Cursor cursor = db.rawQuery("SELECT rec._id, rec.Name, rec.Recipe, FROM recipe WHERE rec._id = ?",
+        Cursor cursor = db.rawQuery("SELECT _id, Name, Recipe FROM recipe WHERE _id = ?",
                 new String[]{""+recipeId});
 
         if (cursor.getCount() == 1)

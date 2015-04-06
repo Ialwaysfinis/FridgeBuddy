@@ -6,10 +6,12 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
+
 
 public class Browse extends Activity {
 
@@ -29,7 +31,11 @@ public class Browse extends Activity {
         db = (new DatabaseHelper(this)).getWritableDatabase();
         searchText = (EditText) findViewById(R.id.searchText);
         recipeList = (ListView) findViewById(R.id.list);
-    }
+        registerListClickCallBack();
+
+
+        }
+
 
     //CREATES AND POPULATES THE LIST FROM THE DATABASE
     public void search(View view) {
@@ -43,13 +49,24 @@ public class Browse extends Activity {
                 new String[]{"Name"},
                 new int[]{R.id.Name});
         recipeList.setAdapter(adapter);
-    }
 
-    //WHEN RECIPE IS CLICKED, SENDS TO RECIPE ACTIVITY
-    public void onListItemClick(ListView parent, View view, int position, long id) {
-        Intent intent = new Intent(this, recipe.class);
-        Cursor cursor = (Cursor) adapter.getItem(position);
-        intent.putExtra("RECIPE_ID", cursor.getInt(cursor.getColumnIndex("_id")));
-        startActivity(intent);
     }
+//--------THIS IS THE METHOD FOR THE ONCLICK FUNCTION FOR THE LIST.-----------------------------
+ private void registerListClickCallBack() {
+    recipeList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        @Override
+        public void onItemClick(AdapterView<?> parent, View viewClicked, int position, long id) {
+            Intent intent = new Intent(Browse.this, recipe.class);
+            Cursor cursor = (Cursor) adapter.getItem(position);
+            intent.putExtra("RECIPE_ID", cursor.getInt(cursor.getColumnIndex("_id")));
+            startActivity(intent);
+        }
+    });
+
+
+
+
+}
+
+
 }
